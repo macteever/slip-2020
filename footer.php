@@ -13,7 +13,7 @@
 					<div class="container">
 						<div class="row footer-logo mt-50">
 							<div class="col-auto mr-auto">
-								<?php include get_template_directory().'/includes/logo-baseline-noanim.php'; ?>
+								<?php include get_template_directory().'/includes/logo.php'; ?>
 							</div>
 						</div>
 						<div class="row justify-content-between mt-80">

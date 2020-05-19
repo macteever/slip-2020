@@ -1,16 +1,6 @@
 <!doctype html>
 <html <?php language_attributes(); ?> class="no-js">
 	<head>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-158278422-1"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-
-		  gtag('config', 'UA-158278422-1');
-		</script>
-		<script data-ad-client="ca-pub-6414740540134747" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		<meta charset="<?php bloginfo('charset'); ?>">
 		<title><?php wp_title(''); ?><?php if(wp_title('', false)) // { echo ' :'; }  bloginfo('name'); ?></title>
 		<link href="<?php echo get_template_directory_uri(); ?>/assets/img/icons/favicon.ico" rel="shortcut icon">
@@ -19,12 +9,11 @@
 		<link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/assets/img/icons/favicon-16x16.png">
 		<link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/assets/img/icons/safari-pinned-tab.svg" color="#1e1e1e">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
-
 		<?php wp_head(); ?>
 		<script>
 				// conditionizr.com
@@ -35,40 +24,76 @@
 				});
 		</script>
 		</head>
-		<?php
-		$term = get_queried_object();
-
-		if((int)$term->parent) {
-			$child_term = 'archive-subcat';
-			// echo $child_term;
-		}else{
-			$child_term = 'archive-cat';
-			// echo $child_term;
-		} 
-		?>
-		<body id="<?php echo $child_term; ?>" <?php body_class(); ?>>
-		<!-- MASK RESPONSIVE -->
-		<!-- <div id="mask-responsive" class="">
-			<div class="h-100 d-flex flex-column justify-content-center align-items-center">
-				<div class="text-center">
-					<?php // include get_template_directory().'/includes/logo-baseline.php'; ?>
-				</div>	
-				<div class="mt-80 pl-30 pr-30">
-					<h3 class="text-center text-white fs-28 mb-15">Site temporairement indisponible depuis un mobile, connectez-vous avec votre ordinateur.</h3>
-					<h4 class="text-center text-white fs-20">Mobile website temporary unavailable, please come with your computer.</h4>
-				</div>
-			</div>
-		</div> -->
+		
+		<body <?php body_class(); ?>>
+		
 		<!-- wrapper -->
 		<div class="wrapper">
 			<!-- header -->
 			<header class="header clear" role="banner">
 				<!-- nav -->
-				<div class="container-fluid menu-container anim-300 bkg-menu">
-					<div class="container">
+				<div class="container-fluid menu-container anim-300 bkg-menu zi-99 p-relative">
+					<div class="container-slip">
 						<?php require 'includes/header-left.php'; ?>
 					</div>
-        		</div>
+				  </div>
+				  <!-- submenu collections -->
+				  <div class="container-fluid main-submenu main-submenu-collections anim-500">
+						<ul class="col-xl-5 col-lg-5 ml-auto d-flex pb-30 mb-0">
+							<?php if ( have_rows('submenu_collections', 'option') ) : ?>
+								<?php while( have_rows('submenu_collections', 'option') ) : the_row(); ?>
+							
+									<li class="d-flex flex-column mr-30 align-items-start">
+										<div class="pl-30 pt-30 pb-30 h-100" style="border-left: solid 2px <?php the_sub_field('bkg_color_link', 'option'); ?>">
+											<h3 class="fs-22"><?php the_sub_field('title', 'option'); ?></h3>
+											<?php if ( get_sub_field('icon', 'option') ) : $image = get_sub_field('icon', 'option'); ?>
+												<div class="mt-10">
+													<img class="d-block" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
+												</div>
+											<?php endif; ?>
+											
+											<p class="mt-10 mb-0">
+												<?php the_sub_field('content', 'option'); ?>
+											</p>
+										</div>
+
+										<button class="btn-custom mt-auto" style="background-color: <?php the_sub_field('bkg_color_link', 'option'); ?>;">
+											<?php if ( get_sub_field('link', 'option') ) : $file = get_sub_field('link', 'option'); ?>
+												<a class="text-white" href="<?php echo $file['url']; ?>"><?php echo $file['title']; ?></a>
+											<?php endif; ?>
+										</button>
+									</li>
+							
+								<?php endwhile; ?>
+							<?php endif; ?>
+						</ul>
+				  </div>
+				  <!-- submenu coupes -->
+				  <div class="container-fluid main-submenu main-submenu-coupes anim-500">
+					  <div class="col-xl-5 col-lg-5 ml-auto d-flex flex-column pb-30">
+							<ul class="pb-40 pt-40 mb-0 pl-15">
+							<?php if ( have_rows('submenu_coupes', 'option') ) : ?>
+									<?php while( have_rows('submenu_coupes', 'option') ) : the_row(); ?>
+							
+										<li class="d-flex">
+											<?php if ( get_sub_field('link', 'option') ) : $file = get_sub_field('link', 'option'); ?>
+												<a class="d-flex align-items-end" href="<?php echo $file['url']; ?>">
+													<?php if ( get_sub_field('icon', 'option') ) : $image = get_sub_field('icon', 'option'); ?>
+														<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
+													<?php endif; ?>
+													<h3 class="ml-40 mb-0 fs-22 lh-1"><?php the_sub_field('title'); ?></h3>
+												</a>
+											<?php endif; ?>
+										</li>
+							
+									<?php endwhile; ?>
+								<?php endif; ?>
+							</ul>
+							<div>
+								<a class="btn-black" href="">Explorer tous les articles</a>
+							</div>
+					  </div>
+				  </div>
 				<!-- /nav -->
 			</header>
 			<!-- /header -->

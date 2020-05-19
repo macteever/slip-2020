@@ -54,7 +54,7 @@ add_action( 'taxonomy_hierarchy_staff', 'taxonomy_hierarchy' );
  
 function taxonomy_hierarchy() {
 	global $post;
-	$taxonomy = 'taxonomy-presentoirs'; 
+	$taxonomy = 'taxonomy-custom-post'; 
 	$terms = wp_get_post_terms( $post->ID, $taxonomy );
  
 	foreach ( $terms as $term ) {
@@ -180,7 +180,14 @@ add_action( 'after_setup_theme', 'my_setup');
 add_action('wp_enqueue_scripts', 'theme_styles'); // Add Theme Stylesheet
 add_action('init', 'custom_scripts'); // Add Custom Scripts
 
-
+function prefix_nav_description( $item_output, $item, $depth, $args ) {
+    if ( !empty( $item->description ) ) {
+        $item_output = str_replace( $args->link_after . '</a>', '<p class="menu-item-description">' . $item->description . '</p>' . $args->link_after . '</a>', $item_output );
+    }
+ 
+    return $item_output;
+}
+add_filter( 'walker_nav_menu_start_el', 'prefix_nav_description', 10, 4 );
 // HTML5 Blank navigation
 function customTheme_nav()
 {
@@ -552,22 +559,22 @@ add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [htm
 function create_post_type_html5()
 {
     // register_taxonomy_for_object_type('category', 'html5-blank'); // Register Taxonomies for Category
-    register_taxonomy_for_object_type('taxonomy-presentoirs', 'presentoirs');
-    register_post_type('presentoirs', // Register Custom Post Type
+    register_taxonomy_for_object_type('taxonomy-custom-post', 'custom-post');
+    register_post_type('custom-post', // Register Custom Post Type
         array(
             'labels' => array(
-                'name' => __('Présentoirs', 'slip-2020'), // Rename these to suit
-                'singular_name' => __('Présentoir', 'slip-2020'),
+                'name' => __('Custom post', 'slip-2020'), // Rename these to suit
+                'singular_name' => __('Custom post', 'slip-2020'),
                 'add_new' => __('Add New', 'slip-2020'),
-                'add_new_item' => __('Add New Présentoir', 'slip-2020'),
+                'add_new_item' => __('Add New Custom post', 'slip-2020'),
                 'edit' => __('Edit', 'slip-2020'),
-                'edit_item' => __('Edit Présentoir', 'slip-2020'),
-                'new_item' => __('New Présentoir', 'slip-2020'),
-                'view' => __('View Présentoir', 'slip-2020'),
-                'view_item' => __('View Présentoir', 'slip-2020'),
-                'search_items' => __('Search Présentoir', 'slip-2020'),
-                'not_found' => __('No Présentoir found', 'slip-2020'),
-                'not_found_in_trash' => __('Présentoir Not found in Trash', 'slip-2020')
+                'edit_item' => __('Edit Custom post', 'slip-2020'),
+                'new_item' => __('New Custom post', 'slip-2020'),
+                'view' => __('View Custom post', 'slip-2020'),
+                'view_item' => __('View Custom post', 'slip-2020'),
+                'search_items' => __('Search Custom post', 'slip-2020'),
+                'not_found' => __('No Custom post found', 'slip-2020'),
+                'not_found_in_trash' => __('Custom post Not found in Trash', 'slip-2020')
             ),
             'public' => true,
             'has_archive' => true,
@@ -588,8 +595,8 @@ function create_post_type_html5()
         )
     );
     register_taxonomy(
-        'taxonomy-presentoirs',
-        'presentoirs',
+        'taxonomy-custom-post',
+        'custom-post',
         array(
             'label'  => __('Custom Taxonomy', 'slip-2020'),
             'labels' =>

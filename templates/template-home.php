@@ -1,11 +1,6 @@
 <?php /* Template Name: Home */
    get_header(); ?>
-   <!-- INTRO ANIM LOGO COOKIES -->
-		<div class="page-loader">
-			<?php  include get_template_directory().'/includes/logo-baseline.php'; ?>
-    </div>
     <!-- VIDEO INTRO -->
-   <?php include get_template_directory().'/includes/video-intro.php'; ?>
    <main role="main">
     <?php if ( have_rows( 'home_repeater' ) ) : ?>
       <?php while ( have_rows('home_repeater' ) ) : the_row(); ?>
