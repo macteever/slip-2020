@@ -44,9 +44,20 @@
           <!-- /nav -->
           <div class="col-auto d-flex align-items-end justify-content-center menu-section-add pr-0">
             <!-- <button><a href="#"><i class="material-icons text-black fs-18">favorite</i></a></button> -->
-            <button class="btn-search lh-1"><i class="material-icons text-black fs-22 fw-300">search</i></button>
-            <button class="lh-1"><a class="text-black fs-22 fw-300" href="<?php echo home_url() . '/mon-compte'; ?>"><span class="material-icons text-black fs-22 fw-300"> person_outline </span></a></button>
-            <button class="lh-1"><a class="text-black fs-22 fw-300" href="<?php echo home_url() . '/panier'; ?>"><span class="material-icons text-black fs-22 fw-300"> local_mall </span></a></button>
+            <button class="btn-search lh-1"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/loupe.svg" alt="logo slip homme paris"></button>
+            <?php
+            if ( is_user_logged_in() ) { ?>
+                <button><a href="<?php echo home_url() . '/mon-compte'; ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/signed.svg" alt="logo slip homme paris"></a></button>
+            <?php } else { ?>
+                <button><a href="<?php echo home_url() . '/mon-compte'; ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/sign-in.svg" alt="logo slip homme paris"></a></button>
+            <?php }
+            ?>
+            <?php if ( WC()->cart->get_cart_contents_count() == 0 ) { ?>
+                <button><a href="<?php echo home_url() . '/panier'; ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/cart-empty.svg" alt="logo slip homme paris"></a></button>
+              <?php } else { ?>
+                <button><a href="<?php echo home_url() . '/panier'; ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/cart-full.svg" alt="logo slip homme paris"></a></button>
+            <?php }
+            ?>
           </div>
         </div>
       </div>

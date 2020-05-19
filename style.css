@@ -451,18 +451,22 @@ strong{
 header a{
 	color: #000000!important;
 }
-
+.header input#dgwt-wcas-search-input-1386{
+	color: #000000;
+}
 /* SUBMENU */
-.main-submenu, .main-submenu-coupes{
+.main-submenu{
 	background-color: #FFFFFF;
 	opacity: 0;
 	top: 0;
 	z-index: 0;
-	height: 0;
+	max-height: 0;
+	transition: 0.35s;
 	overflow: hidden;
 }
-.main-submenu.submenu-develop, .main-submenu-coupes.submenu-develop{
-	height: auto;
+.main-submenu.submenu-develop{
+	max-height: 500px;
+	transition: 0.35s;
 	padding: 0px 15px 0px 15px;
 	opacity: 1;
 }
@@ -471,6 +475,9 @@ header a{
 }
 .main-submenu-coupes img, .main-submenu-collections img{
 	height: 35px;
+}
+.main-submenu-coupes > div{
+	padding-left: 5em;
 }
 .main-submenu-coupes ul{
 	border-left: solid 2px #000000;
@@ -643,6 +650,9 @@ margin-left: auto;
    background: none;
 	border: none;
 }
+.menu-section-add button img{
+	height: 22px;
+}
 .large-menu{
 	max-height: 50px;
 	overflow: hidden;
@@ -653,6 +663,7 @@ margin-left: auto;
 .menu-rotate{
 	transform: translateY(30px);
 }
+
 /* SEARCH BAR */
 .search-bar form{
 	display: flex;
@@ -660,7 +671,6 @@ margin-left: auto;
 .search-bar input{
 	border: none!important;
 	border-radius: 0px;
-	color: #FFF;
 	padding: 5px 10px;
 	height: 38px;
 	min-width: 250px;
@@ -672,9 +682,6 @@ margin-left: auto;
 	position: absolute;
 	right: 5px;
 	top: 10px;
-}
-.btn-search{
-	padding-right: 0px!important;
 }
 /* LOGO */
 .container-logo-menu img{
