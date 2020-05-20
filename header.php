@@ -77,11 +77,11 @@
 							
 										<li class="d-flex">
 											<?php if ( get_sub_field('link', 'option') ) : $file = get_sub_field('link', 'option'); ?>
-												<a class="d-flex align-items-end" href="<?php echo $file['url']; ?>">
+												<a class="d-flex w-100 align-items-end justify-content-between" href="<?php echo $file['url']; ?>">
 													<?php if ( get_sub_field('icon', 'option') ) : $image = get_sub_field('icon', 'option'); ?>
 														<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
 													<?php endif; ?>
-													<h3 class="ml-40 mb-0 fs-22 lh-1"><?php the_sub_field('title'); ?></h3>
+													<h3 class="mb-0 fs-22 lh-1"><?php the_sub_field('title'); ?></h3>
 												</a>
 											<?php endif; ?>
 										</li>
@@ -90,7 +90,7 @@
 								<?php endif; ?>
 							</ul>
 							<div>
-								<a class="btn-black" href="">Explorer tous les articles</a>
+								<a class="btn-black" href="<?php echo home_url() . '/boutique'; ?>">Explorer tous les articles</a>
 							</div>
 					  </div>
 				  </div>

@@ -441,17 +441,20 @@ strong{
 	margin-left: auto;
 }
 /* header */
-.header {
+.header, .header-sport{
 	width: 100%;
 	z-index: 99991;
 	position: fixed;
 	top: 30px;
 	background-color: #FFFFFF;
 }
-header a{
+.header a{
 	color: #000000!important;
 }
-.header input#dgwt-wcas-search-input-1386{
+.header-sport a{
+	color: #318EE8!important;
+}
+.header input#dgwt-wcas-search-input-1386, .header-sport input#dgwt-wcas-search-input-1386{
 	color: #000000;
 }
 /* SUBMENU */
@@ -473,14 +476,18 @@ header a{
 .main-submenu-coupes li{
 	margin-bottom: 15px;
 }
-.main-submenu-coupes img, .main-submenu-collections img{
+.main-submenu-collections img{
 	height: 35px;
+}
+.main-submenu-coupes img{
+	height: 50px;
 }
 .main-submenu-coupes > div{
 	padding-left: 5em;
 }
 .main-submenu-coupes ul{
 	border-left: solid 2px #000000;
+	max-width: 250px;
 }
 /* END SUBMENU */
 
@@ -685,7 +692,8 @@ margin-left: auto;
 }
 /* LOGO */
 .container-logo-menu img{
-	width: 100px;
+	width: auto;
+	height: 90px;
 }
 
 /* VIDEO INTRO */

@@ -1,5 +1,5 @@
 <?php /* Template Name: Home */
-   get_header(); ?>
+   get_header('sport'); ?>
     <!-- VIDEO INTRO -->
    <main role="main">
     <?php if ( have_rows( 'home_repeater' ) ) : ?>
