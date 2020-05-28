@@ -15,6 +15,8 @@
 	Theme Support
 \*------------------------------------*/
 
+
+
 if (!isset($content_width))
 {
     $content_width = 900;
@@ -227,10 +229,10 @@ function html5blank_header_scripts()
 // Load conditional style
 function ct_conditional_styles()
 {
-    // if (is_tax( 'taxonomy-presentoirs') || is_tax( 'taxonomy-mannequins' ) || is_search( ) ){
-    //     wp_register_style('magnifier', get_template_directory_uri() . '/assets/css/magnifier.css', array(), '1.0', 'all');
-    //     wp_enqueue_style('magnifier'); // Enqueue it!
-    // }
+    if (is_page_template( array('templates/template-home.php') )){
+            wp_register_style('slick-css', get_template_directory_uri() . '/assets/css/slick.css', array(), '1.0', 'all');
+            wp_enqueue_style('slick-css'); // Enqueue it!
+    }
 }
 // Load HTML5 Blank styles
 function html5blank_styles()
@@ -247,7 +249,13 @@ function html5blank_conditional_scripts()
 {
     if (is_page_template( array('templates/template-home.php') )){
         wp_register_script('home-script', get_template_directory_uri() . '/assets/js/home.js', array('jquery'), false, false); // Custom home script
-        wp_enqueue_script('home-script'); // Enqueue it!        
+        wp_enqueue_script('home-script'); // Enqueue it!       
+        wp_enqueue_script('slick-script', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js'); 
+
+        wp_enqueue_script('tweenmax', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js', ['jquery'], '1.0.0', true);
+        wp_enqueue_script('scrollmagic', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.min.js', ['jquery'], '1.0.0', true);
+        wp_enqueue_script('scrollmagicindicator', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js', ['jquery'], '1.0.0', true);
+        wp_enqueue_script('animation.gsap', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.min.js', ['jquery'], '1.0.0', true);
     }
     if (is_page_template( array('templates/template-about.php') )){
         wp_register_script('about-script', get_template_directory_uri() . '/assets/js/about.js', array('jquery'), false, false); // Custom about script

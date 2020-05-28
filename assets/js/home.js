@@ -20,6 +20,127 @@
          $(".main-submenu").removeClass( "submenu-develop" );
       });
 
+
+      // HOME VIDEO REPEAT 
+
+      function homepart1(){
+         var video = $('#home_video').get(0);        
+         video.play();
+         video.addEventListener('ended',function(){
+            v = video.currentSrc;
+            video.src = '';
+            video.src = v;         
+            // console.log('fin video');   
+            $('.home-repeat-video').delay(1000).fadeIn(300);
+            jQuery('.home-repeat-video').click(function(){
+               // $(this).data('clicked', true);
+   
+               video.play();
+               $('.home-repeat-video').fadeOut(300);
+            });
+   
+         });
+      };
+      homepart1()
+
+      function homepart3(){
+         var video = $('.home-video-recommandation').get(0);        
+         video.play();
+         video.addEventListener('ended',function(){
+            v = video.currentSrc;
+            video.src = '';
+            video.src = v;         
+   
+            $('.home-repeat-video2').delay(1000).fadeIn(300);
+            jQuery('.home-repeat-video2').click(function(){
+   
+               video.play();
+               $('.home-repeat-video2').fadeOut(300);
+            });
+   
+         });
+      };
+      homepart3()
+
+
+      // HOME SLIDER RECOMMANDATIONS
+
+      $('.home-slider-products').slick({
+         infinite: true,
+         slidesToShow: 5,
+         slidesToScroll: 1, 
+         dots: false,
+         arrows: false, 
+         responsive: [
+            {
+              breakpoint: 1280,
+              settings: {
+                slidesToShow: 4
+              }
+            },
+            {
+              breakpoint: 992,
+              settings: {
+                slidesToShow: 3
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 2
+              }
+            },
+            {
+              breakpoint: 420,
+              settings: {
+                slidesToShow: 1
+              }
+            }
+          ]
+        });
+
+      // animation scroll horizontal
+
+      $(function() {
+         if( $(window).width() > 768 ) {	
+            
+            $(function() {
+               // init controller
+               var controller = new ScrollMagic.Controller();
+
+               // build a tween
+               var scrollText = $('.home-scroll-h');
+
+               var homeScroll =  new TimelineMax()
+               .fromTo(scrollText, 1,  
+               {
+                  x: '0%'
+               }, 
+               {
+                  x: '-18%'
+               },'first')
+
+
+               // build scene
+               var wH = $(window).height();
+
+               var sceneHpara1 = new ScrollMagic.Scene({
+                  triggerElement: '.home-engagements', // You can use 'this'
+                  duration: wH, // Distance duration in px
+                  triggerHook : 0 // 'percentage of window's height'
+               })
+
+               // Create a scene for each project
+               .setTween(homeScroll) // trigger a TweenMax.to tween
+               //.addIndicators({name: "Horizontal Parallax moving"}) // add indicators (requires plugin)
+               .addTo(controller);
+            });
+         }
+      });
+
+
+
+
       /////////// : SAINT HONORE : /////////////
       // LOADER
 	   // $(".page-loader").delay(3500).fadeOut(500);
@@ -199,50 +320,7 @@
       // });
 
 
-      // // PARALLAX CONTENT HOME PAGE 
-      // $(function() {
-      // if( $(window).width() > 768 ) {	
-         
-      //    $(function() {
-      //       // init controller
-      //       var controller = new ScrollMagic.Controller();
-
-
-      //       $('.home-main .row').each(function() {
-      //          var $this = $(this);
-      //          var wH = $(window).outerHeight();
-      //          var thisImg = $(this).find('.home-repeater-img');
-      //          var thisText = $(this).find('.home-repeater-content-parent');
-      //       // build a tween
-      //       var homeContent1 =  new TimelineMax()
-      //       .fromTo(thisText, 1,  
-      //       {
-      //          y: '-8%'
-      //       }, 
-      //       {
-      //          y: '-18%'
-      //       },'first')
-      //       .fromTo(thisImg, 1,  
-      //       {
-      //          y: '0%'
-      //       }, 
-      //       {
-      //          y: '10%'
-      //       },'first')
-
-      //       // build scene
-      //       var sceneHpara1 = new ScrollMagic.Scene({
-      //          triggerElement: this, // You can use 'this'
-      //          duration: wH*1.5, // Distance duration in px
-      //          triggerHook : 0.8 // 'percentage of window'
-      //       })
-
-      //       // Create a scene for each project
-      //       .setTween(homeContent1) // trigger a TweenMax.to tween
-      //       //.addIndicators({name: "Parllax moving"}) // add indicators (requires plugin)
-      //       .addTo(controller);
-      //       });
-      //    });
+      
 
       //       // VIDEO SPRITE
 

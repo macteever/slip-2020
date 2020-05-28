@@ -177,6 +177,15 @@ strong{
 	border: none;
 }
 
+.btn-white{
+	background-color: #FFFFFF;
+	color: #000000!important;
+	width: auto;
+	font-size: 18px;
+	padding: 0.5em 3.5em 0.5em 0.5em;
+	border: none;
+	text-align: left;
+}
 .btn-black{
 	background-color: #000000;
 	color: #FFFFFF!important;
@@ -184,6 +193,7 @@ strong{
 	font-size: 18px;
 	padding: 0.5em 2.5em 0.5em 0.5em;
 	border: none;
+	text-align: left;
 }
 
 .btn-blue{
@@ -246,6 +256,8 @@ strong{
 .ls-15{letter-spacing: 15px;}
 .ls-20{letter-spacing: 20px;}
 
+.fw-100{font-weight: 100!important;}
+.fw-200{font-weight: 200!important;}
 .fw-300{font-weight: 300!important;}
 .fw-400{font-weight: 400;}
 .fw-500{font-weight: 500;}
@@ -416,16 +428,16 @@ strong{
 	left: 0;
 	z-index: 99997;
 	padding: 0px 30px;
-	background-color: #b3b4b5;
+	background-color: #000000;
 }
 .cookie-notif a{
-	color: #1F1E1E;
+	color: #FFFFFF;
 }
 
 .cookie-span {
 	font-size: 32px;
 	line-height: 10px;
-	color: #e5e5e5;
+	color: #FFFFFF;
 	position: relative;
 	top: 10px;
 }
@@ -443,16 +455,16 @@ strong{
 /* header */
 .header, .header-sport{
 	width: 100%;
-	z-index: 99991;
+	z-index: 999999;
 	position: fixed;
 	top: 30px;
 	background-color: #FFFFFF;
 }
 .header a{
-	color: #000000!important;
+	color: #000000;
 }
 .header-sport a{
-	color: #318EE8!important;
+	color: #318EE8;
 }
 .header input#dgwt-wcas-search-input-1386, .header-sport input#dgwt-wcas-search-input-1386{
 	color: #000000;
@@ -693,7 +705,7 @@ margin-left: auto;
 /* LOGO */
 .container-logo-menu img{
 	width: auto;
-	height: 90px;
+	height: 90px;	
 }
 
 /* VIDEO INTRO */
@@ -709,6 +721,208 @@ margin-left: auto;
 
 /* HOME */
 
+.home-main.home-bkg-img{
+	height: 90vh;
+	background-size: cover!important;
+}
+.home-main-legend{
+	padding-top: 20vh;
+	padding-right: 30px;
+}
+.home-main-content{
+	opacity: 0.90;
+	padding: 0px;
+}
+.home-main-content > div{
+	padding: 0px 30px 0px 30px;
+}
+.home-main-content button{
+	transform: translateY(39px);
+}
+.home-video-link{
+	display: flex;
+	z-index: 9999;
+	position: relative;
+}
+.home-bkg-video{
+	position: relative;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.home-content-video{
+	position: absolute;
+	top: 0;
+}
+.home-repeat-video{
+	position: absolute;
+	left: 15px;
+	bottom: 15px;
+}
+.home-repeat-video, .home-repeat-video2{
+	z-index: 999999999;
+	cursor: pointer;
+	border-radius: 100%;
+	padding: 10px 10px 3px 10px;
+	display: none;
+}
+.home-repeat-video:hover, .home-repeat-video2:hover{
+	background-color: #000000;
+}
+#home_part1 .video-container{
+	height: 90vh;
+	overflow: hidden;
+}
+.home-bkg-video .video-container video{
+	width: 100vw;
+	height: 100%;
+	object-fit: cover;
+}
+.home-forward-product-content{
+	position: absolute;
+	top: 0;
+}
+.home-forward-product::before{
+	content: "";
+	background-color: #000000;
+	display: block;
+	height: 80%;
+	width: 5px;
+	left: 11px;
+	position: absolute;
+	bottom: 0;
+}
+.home-forward-while-products img{
+	width: 100%;
+	height: 450px;
+	object-fit: cover;
+}
+.product-hover-img2{
+	position: absolute;
+	left: 0;
+	top: 0px;
+	z-index: 99;
+}
+#home-while-product:hover .product-hover-img2{
+	opacity: 0;
+}
+.product-hover-banner{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding: 0.5em;
+}
+.product-hover-isnew{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	padding-top: 0.5em;
+	padding-left: 0.5em;
+}
+.product-hover-banner p, .product-hover-banner span{
+	line-height: 1;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+.home-smart-product-content h3{
+	font-size: 32px;
+}
+.home-smart-product-content p:last-child{
+	font-size: 18px;
+}
+.home-engagements{
+	/* transform: translateX(-60px); */
+	position: relative;
+	width: calc(50% + 60px);
+	padding-left: 75px;
+	padding-top: 60px;
+	background-color: #ffffff;
+	z-index: 99991;
+	overflow: hidden;
+}
+.home-engagements h3{
+	font-size: 28px;
+	font-family: 'Ubuntu', sans-serif;
+}
+.home-engagements img{
+	width: 80px;
+}
+.home-part3 .video-container{
+	height: 50vh;
+	overflow: hidden;
+}
+.home-part3 .video-container video{
+	width: 100vw;
+	height: 100%;
+	object-fit: cover;
+}
+.home-scroll-h{
+	width: 100vw;
+}
+.home-recommandation-bkg-video{
+	margin-top: -80px;
+	position: relative;
+}
+.home-part3 .home-main-content button {
+	transform: translateY(0px);
+}
+.home-repeat-video2 {
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+}
+.home-before-subtitle::before{
+	content: "";
+	display: block;
+	background-color: #000000;
+	height: 4px;
+	width: 150px;
+	margin-bottom: 30px;
+}
+.home-slider-products .slick-slide{
+	margin: 0 10px;
+}
+/* .home-slider-product{
+	margin: 0px 10px;
+} */
+.home-slider-products img{
+	max-height: 450px;
+	width: 100%;
+}
+.img-product-1stplan{
+	position: relative;
+	z-index: 990;
+}
+.img-product-1stplan img{
+	height: 450px;
+	object-fit: cover;
+}
+.img-product-2ndplan{
+	position: absolute;
+	background-size: cover!important;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 99;
+}
+.home-slider-product:hover .img-product-1stplan{
+	opacity: 0;
+	cursor: pointer;
+}
+.hover-1st-img{
+	top: 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.hover-1st-img-infos{
+	padding: 0.5em;
+	bottom: 0;
+	position: absolute;
+	width: 100%;
+}
 /* ABOUT */
 
 
@@ -946,7 +1160,10 @@ footer {
 }
 .footer-part1{
 	background-color: #FFF;
-	padding: 6em 0px 2em;
+	padding: 3em 0px 3em;
+}
+.footer-part1 h3{
+	font-size: 32px;
 }
 .footer-part1 h3{
 	font-size: 32px;
@@ -956,7 +1173,7 @@ footer {
 }
 .footer-part2{
 	background-color: #1F1E1E;
-	padding: 2em 0px 0em;
+	padding: 3em 0px 1em;
 }
 .footer-logo svg{
 	width: 220px;
@@ -968,7 +1185,19 @@ footer {
 	height: 1px;
 	margin-top: 15px;
 	margin-bottom: 15px;
-	min-width: 130px;
+	width: 120px;
+}
+.footer-subtitle-after-black::after{
+	content: '';
+	display: block;
+	background-color: #000000;
+	height: 1px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	width: 100%;
+}
+.footer-part1 img{
+	max-width: 45px;
 }
 .footer-link-cat ul{
 	padding-left: 0px;
@@ -986,7 +1215,6 @@ footer {
 .footer-newsletter input{
 	border-radius: 0px;
 	height: 40px!important;
-	width: auto;
 	background: none;
 	color: #FFF!important;
 	border: solid 1px rgba(255,255,255,0.2);
@@ -1083,8 +1311,9 @@ body.error404{
 .ubuntu{
 	font-family: 'Ubuntu', sans-serif;
 }
-.ubuntut-condensed{
+.ubuntu-condensed{
 	font-family: 'Ubuntu Condensed', sans-serif;
+	font-weight: 100;
 }
 
 /*------------------------------------*\
@@ -1093,6 +1322,11 @@ body.error404{
 @media only screen and (min-width:1440px) {
 	.container-slip{
 		max-width: 1280px;
+	}
+}
+@media only screen and (max-width:1440px) {
+	.img-product-1stplan img{
+		height: 400px;
 	}
 }
 @media only screen and (min-width:1280px) {
