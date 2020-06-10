@@ -260,6 +260,11 @@ function html5blank_conditional_scripts()
     if (is_page_template( array('templates/template-about.php') )){
         wp_register_script('about-script', get_template_directory_uri() . '/assets/js/about.js', array('jquery'), false, false); // Custom about script
         wp_enqueue_script('about-script'); // Enqueue it!        
+
+        wp_enqueue_script('tweenmax', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js', ['jquery'], '1.0.0', true);
+        wp_enqueue_script('scrollmagic', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.min.js', ['jquery'], '1.0.0', true);
+        wp_enqueue_script('scrollmagicindicator', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js', ['jquery'], '1.0.0', true);
+        wp_enqueue_script('animation.gsap', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.min.js', ['jquery'], '1.0.0', true);
     }
     // if (is_singular( 'presentoirs' ) ){
     //     wp_register_script('zoom', get_template_directory_uri() . '/assets/js/jquery.zoom.min.js', array('jquery'), true, true); // Custom magnificent script

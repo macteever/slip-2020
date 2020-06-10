@@ -1,6 +1,26 @@
 (function ($, root, undefined) {
 	$(document).ready(function(){
 
+		// SUBMENU COLLECTIONS
+		$( ".submenu-collections" ).hover(
+         function() {
+            $(".main-submenu").removeClass( "submenu-develop" );
+            $(".main-submenu-collections").addClass( "submenu-develop" );
+         }
+      );
+      // SUBMENU COUPES 
+      $( ".submenu-coupes" ).hover(
+         function() {
+            $(".main-submenu").removeClass( "submenu-develop" );
+            $(".main-submenu-coupes").addClass( "submenu-develop" );
+         }
+      );
+      // HIDE SUBMENUS
+      $('header').mouseleave(function() {
+         $(".main-submenu").removeClass( "submenu-develop" );
+      });
+
+
 
 		// SPLASH SCREEN IF NEW USER
 
