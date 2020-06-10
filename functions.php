@@ -233,6 +233,10 @@ function ct_conditional_styles()
             wp_register_style('slick-css', get_template_directory_uri() . '/assets/css/slick.css', array(), '1.0', 'all');
             wp_enqueue_style('slick-css'); // Enqueue it!
     }
+    if (is_page_template( array('templates/template-environnement.php') )){
+            wp_register_style('slick-css', get_template_directory_uri() . '/assets/css/slick.css', array(), '1.0', 'all');
+            wp_enqueue_style('slick-css'); // Enqueue it!
+    }
 }
 // Load HTML5 Blank styles
 function html5blank_styles()
@@ -250,6 +254,7 @@ function html5blank_conditional_scripts()
     if (is_page_template( array('templates/template-home.php') )){
         wp_register_script('home-script', get_template_directory_uri() . '/assets/js/home.js', array('jquery'), false, false); // Custom home script
         wp_enqueue_script('home-script'); // Enqueue it!       
+
         wp_enqueue_script('slick-script', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js'); 
 
         wp_enqueue_script('tweenmax', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js', ['jquery'], '1.0.0', true);
@@ -265,6 +270,12 @@ function html5blank_conditional_scripts()
         wp_enqueue_script('scrollmagic', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.min.js', ['jquery'], '1.0.0', true);
         wp_enqueue_script('scrollmagicindicator', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js', ['jquery'], '1.0.0', true);
         wp_enqueue_script('animation.gsap', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.min.js', ['jquery'], '1.0.0', true);
+    }
+    if (is_page_template( array('templates/template-environnement.php') )){
+        wp_register_script('environement-script', get_template_directory_uri() . '/assets/js/environement.js', array('jquery'), false, false); // Custom environement script
+        wp_enqueue_script('environement-script'); // Enqueue it!    
+        
+        wp_enqueue_script('slick-script', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js'); 
     }
     // if (is_singular( 'presentoirs' ) ){
     //     wp_register_script('zoom', get_template_directory_uri() . '/assets/js/jquery.zoom.min.js', array('jquery'), true, true); // Custom magnificent script

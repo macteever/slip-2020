@@ -967,8 +967,106 @@ margin-left: auto;
 .about-citation:last-of-type{
 	display: none;
 }
+/* PAGE ENVIRONNEMENT */
 
-
+#environement_part1 .video-container, #environement_part1 .environement-bkg-img, #environement_part4 .video-container{
+	height: 60vh;
+	overflow: hidden;
+}
+#environement_part1 .video-container video, #environement_part4 .video-container video{
+	width: 100vw;
+	height: 100%;
+	object-fit: cover;
+}
+.container-fluid.environement-bkg-video{
+	padding-right: 0px;
+	padding-left: 0px;
+	position: relative;
+}
+.environement-content-video, .environement-repeat-video2 {
+	position: absolute;
+	top: 0;
+}
+.environement-main-content {
+	opacity: 0.90;
+	padding: 0px;
+}
+.environement-main-content > div {
+	padding: 0px 30px 0px 30px;
+}
+.environement-repeat-video, .environement-repeat-video2{
+	z-index: 999999999;
+	cursor: pointer;
+	border-radius: 100%;
+	padding: 10px 10px 3px 10px;
+	display: none;
+	position: absolute;
+	bottom: 15px;
+}
+.environement-repeat-video, .environement-repeat-video2{
+	left: 15px;
+}
+.environement-repeat-video2{
+	position: absolute;
+	right: 15px;
+	top: -45px;
+}
+.environement-slider-content::before{
+	content: '';
+	background-color: #000000;
+	width: 4px;
+	height: 70%;
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: -15px;
+}
+.environement-slider img{
+	height: 550px!important;
+	object-fit: cover;
+}
+.environement-slider-nav img{
+	max-height: 80px!important;
+	object-fit: cover;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+#environement_part2 h2, #environement_part2 h3{
+	font-size: 36px;
+	margin-bottom: 30px;
+}
+#environement_part3{
+	background-color: #FFFFFF;
+	padding: 100px 0;
+}
+#environement_part3 img{
+	width: 80px;
+}
+#environement_part5 h2, #environement_part5 h3{
+	font-size: 28px;
+	margin-bottom: 30px;
+}
+#environement_part5 img{
+	height: 400px;
+	object-fit: cover;
+	width: 100%;
+}
+.environement-thumbnails-hover{
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(255,255,255,0.8);
+	max-height: 400px;
+	width: 100%;
+}
+.environement-thumbnail:hover .environement-thumbnail-1stplan{
+	opacity: 0;
+	cursor: pointer;
+}
+.environement-thumbnail-1stplan{
+	position: relative;
+	z-index: 990;
+}
 /* PAGE CONTACT */
 
 /* MODAL CONTACT */
