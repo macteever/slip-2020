@@ -85,10 +85,10 @@
 								<div>
 									<h3 class="fs-20 text-white footer-subtitle-after">Informations<br><span>légales</span></h3>
 									<ul>
-										<li><a class="text-white" href="#">Protections des données</a></li>
-										<li><a class="text-white" href="#">Protections des données</a></li>
-										<li><a class="text-white" href="#">Protections des données</a></li>
-										<li><a class="text-white" href="#">Protections des données</a></li>
+										<li><a class="text-white" href="<?php echo home_url() . '/mentions-legales/#mentions-legales'; ?>">Mentions légales</a></li>
+										<li><a class="text-white" href="<?php echo home_url() . '/mentions-legales/#livraisons-retours'; ?>">Livraisons et retours</a></li>
+										<li><a class="text-white" href="<?php echo home_url() . '/mentions-legales/#protection-donnees'; ?>">Protection des données</a></li>
+										<li><a class="text-white" href="<?php echo home_url() . '/mentions-legales/#cgv'; ?>">CGV</a></li>
 									</ul>
 								</div>
 								

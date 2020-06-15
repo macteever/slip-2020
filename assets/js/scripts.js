@@ -100,6 +100,21 @@
                 }, 800);
             }
 		  });
+
+
+		  // REDIRECT TABS AFTER LOAD FOR LEGAL NOTICE	
+		  	$( ".legal-tabs button" ).each(function( index ) {
+
+			var idName = $(this).attr("id");
+			var locationPath = location.protocol+'//'+location.host+location.pathname
+
+				if (window.location.href == locationPath + "#" + idName) {
+					$("#"+idName).trigger('click');
+				} 
+				
+			});
+		
+
 		  
 		 
 	});
